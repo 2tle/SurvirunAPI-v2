@@ -1,4 +1,5 @@
-import mongoose, { Schema } from "mongoose"
+import mongoose from "mongoose"
+const { Schema } = mongoose
 import moment from 'moment-timezone'
 
 const exercise = new Schema({
@@ -24,4 +25,4 @@ const exercise = new Schema({
 	}
 })
 
-export default mongoose.model < mongoose.Document > ('exercise', exercise)
+export default mongoose.model('exercise', exercise)

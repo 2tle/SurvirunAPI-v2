@@ -1,7 +1,11 @@
 export const ENV = [
 	'MONGODB_URL',
 	'PORT',
-	'JWT_SECRET'
+	'JWT_SECRET',
+	'REDIS_HOST',
+	'REDIS_PORT',
+	'REDIS_USERNAME',
+	'REDIS_PASSWORD'
 ]
 
 export default async () => {

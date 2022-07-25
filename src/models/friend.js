@@ -1,4 +1,5 @@
-import mongoose, { Schema } from "mongoose"
+import mongoose from "mongoose"
+const { Schema } = mongoose
 
 const friend = new Schema({
 	uid: {
@@ -8,4 +9,4 @@ const friend = new Schema({
 	friends: [String]
 })
 
-export default mongoose.model < mongoose.Document > ('friend', friend)
+export default mongoose.model('friend', friend)
