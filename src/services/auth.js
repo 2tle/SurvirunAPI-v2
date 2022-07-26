@@ -1,7 +1,13 @@
 import UserRepository from '../models/user.js'
 
-class AuthService {
-	constructor() { }
+export default class AuthService {
+	static instance
+	constructor() {
+		if (AuthService.instance) {
+			return AuthService.instance
+		}
+		AuthService.instance = this
+	}
 
 	async getUserById(id) {
 		return await UserRepository.findOne({ _id: id })
@@ -20,20 +26,14 @@ class AuthService {
 		if (!result) return false
 		else return true
 	}
+
+	async isUsernameExists(username) {
+		const result = await this.getUserByUsername(username)
+		if (!result) return false
+		else return true
+	}
+
+
+
 }
 
-const authService = new AuthService()
-
-export default authService
-
-// const getUserById = async (id) => { return await User.findOne({ _id: id }) }
-// const getUserByEmail = async (email) => { return await User.findOne({ email: email }) }
-// const getUserByUsername = async (username) => { return await User.findOne({username: username}) }
-
-// const createToken = (user) => {
-// 	if(user != null) {
-// 		const 
-// 	} else {
-// 		//throw new Error()
-// 	}
-// }
